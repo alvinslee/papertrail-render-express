@@ -1,0 +1,15 @@
+{
+  "name": "papertrail-render-express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:alvinslee/papertrail-render-express.git",
+  "author": "Alvin Lee <alvin@ootbdev.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "faker": "5.5.3",
+    "pg": "^8.11.3",
+    "redis": "^4.6.8"
+  }
+}
