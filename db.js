@@ -3,7 +3,12 @@ const faker = require('faker')
 
 const { Client } = require('pg')
 const client = new Client()
-client.connect()
+
+try {
+  client.connect()
+} catch (err) {
+  console.log(err)
+}
 
 const getAll = async () => {
   const result = await client.query('select name, email from users')

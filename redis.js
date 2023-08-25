@@ -6,7 +6,12 @@ const client = createClient({
 })
 
 client.on('error', err => console.log('Redis Client Error', err));
-client.connect()
+
+try {
+  client.connect()
+} catch (err) {
+  console.log(err)
+}
 
 const HASH_NAME = 'ip_addresses'
 
