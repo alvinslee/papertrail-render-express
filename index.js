@@ -46,8 +46,7 @@ app.delete('/redis', async (req, res) => {
 app.get('/', async (req, res) => {
   console.log('GET request to /')
   const results = {
-    database: await db.getCount(),
-    redis: await redis.getCount()
+    database: await db.getCount()
   }
   res.send(JSON.stringify(results))
 })
