@@ -3,7 +3,7 @@ const PORT = process.env.PORT || 3000
 const express = require('express')
 const app = express()
 const db = require('./db')
-const redis = require('./redis')
+// const redis = require('./redis')
 
 app.use(express.json())
 
@@ -25,23 +25,23 @@ app.delete('/database', async (req, res) => {
   res.send('OK')
 })
 
-app.get('/redis', async (req, res) => {
-  console.log('GET request to /redis')
-  const results = await redis.getAll()
-  res.send(JSON.stringify(results))
-})
-
-app.post('/redis', async (req, res) => {
-  console.log('POST request to /redis')
-  await redis.insert()
-  res.send('OK')
-})
-
-app.delete('/redis', async (req, res) => {
-  console.log('DELETE request to /redis')
-  await redis.deleteRecords(req.body.count || 1)
-  res.send('OK')
-})
+//app.get('/redis', async (req, res) => {
+//  console.log('GET request to /redis')
+//  const results = await redis.getAll()
+//  res.send(JSON.stringify(results))
+//})
+//
+//app.post('/redis', async (req, res) => {
+//  console.log('POST request to /redis')
+//  await redis.insert()
+//  res.send('OK')
+//})
+//
+//app.delete('/redis', async (req, res) => {
+//  console.log('DELETE request to /redis')
+//  await redis.deleteRecords(req.body.count || 1)
+//  res.send('OK')
+//})
 
 app.get('/', async (req, res) => {
   console.log('GET request to /')
